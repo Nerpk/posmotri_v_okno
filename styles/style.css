@@ -53,7 +53,7 @@ ol {
 
 .content {
   display: flex;
-  margin: 136px 30px;
+  margin: 272px 30px;
   justify-content: center;
   align-items: flex-end;
   gap: 30px;
@@ -83,7 +83,7 @@ ol {
 }
 
 .result__video-container {
-  block-size: 400px;
+  block-size: 395px;
   inline-size: 715px;
   margin-block-end: 16px;
   position: relative;
@@ -237,6 +237,10 @@ fieldset {
 
 .search-form__checkbox-list .search-form__label:hover {
   text-decoration: underline;
+}
+
+.search-form__label:focus {
+  outline: none;
 }
 
 .button:hover {

@@ -10,7 +10,7 @@ html {
 
 .page {
   inline-size: 1200px;
-  block-size: 100%;
+  block-size: 800px;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -62,6 +62,8 @@ ol {
 .search-form {
   display: flex;
   gap: 40px;
+  margin-inline-start: 4px; /*для подгонки к макету*/
+  margin-block-end: 3px; /*для подгонки к макету*/
 }
 
 .content__list {

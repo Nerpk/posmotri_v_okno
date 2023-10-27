@@ -10,12 +10,15 @@ html {
 
 .page {
   inline-size: 1200px;
-  block-size: 800px;
+  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -53,23 +56,26 @@ ol {
 
 .content {
   display: flex;
-  margin: 272px 30px;
   justify-content: center;
   align-items: flex-end;
-  gap: 30px;
+  gap: 27px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .search-form {
   display: flex;
   gap: 40px;
-  margin-inline-start: 4px; /*для подгонки к макету*/
-  margin-block-end: 3px; /*для подгонки к макету*/
+  padding-inline-end: 5px;
 }
 
 .content__list {
   block-size: 300px;
-  inline-size: 400px;
-  overflow-y: scroll; 
+  overflow-y: auto; 
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -81,19 +87,20 @@ ol {
   inline-size: 100%;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  justify-content: space-between;
+  gap: 19px;
 }
 
 .result__video-container {
-  block-size: 395px;
-  inline-size: 715px;
-  margin-block-end: 16px;
+  block-size: 386px;
+  inline-size: 711px;
   position: relative;
 }
 
 .result__video {
   block-size: 100%;
   inline-size: 100%;
+  object-fit: cover;
 }
 
 .content__video-card {
@@ -105,11 +112,13 @@ ol {
 .content__video-card-thumbnail {
   inline-size: 194px;
   block-size: 103px;
+  object-fit: cover;
 }
 
 .search-form__fieldset-title {
   font-size: 18px;
   font-weight: 400;
+  margin-block-end: 5px;
 }
 
 .title {
@@ -118,7 +127,7 @@ ol {
   font-weight: 700;
   line-height: 94%;
   text-transform: uppercase;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
 }
 
 .content__accent {
@@ -132,13 +141,15 @@ ol {
 .content__card-link {
   text-decoration: none;
   color: #fff;
+  display: block;
+  margin: 2px;
 }
 
 .content__video-card-title {
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
 }
 
 .content__video-card-description {
@@ -153,20 +164,21 @@ fieldset {
   display: flex;
   width: fit-content;
   cursor: pointer;
-  gap: 5px;
+  gap: 7px;
   align-items: center;
 }
 
 .search-form__textfield {
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.70);
+  color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   border: none;
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
-  inline-size: 225px;
+  min-inline-size: 225px;
   appearance: none;
+  min-block-size: 27px;
 }
 
 .search-form__checkbox-list {
@@ -177,14 +189,12 @@ fieldset {
 
 .search-form__pseudo-checkbox {
   display: inline-block;
-  inline-size: 19px;
-  block-size: 19px;
+  inline-size: 15px;
+  block-size: 15px;
   background-color: transparent;
-  border: 1px solid #FFF;
-}
-
-.search-form__fieldset-title {
-  margin-block-end: 5px;
+  outline-offset: 1px;
+  outline: 1px solid #FFF;
+  margin-inline-start: 2px;
 }
 
 .button {
@@ -194,7 +204,7 @@ fieldset {
   font-size: 18px;
   font-weight: 700;
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   width: 194px;
   height: 34px;
   cursor: pointer;
@@ -208,19 +218,9 @@ fieldset {
   inline-size: 100%;
 }
 
-.search-form__label:active {
-  outline: 1px solid #fff;
-  border: none;
-}
-
 .search-form__label:has(:focus-visible) {
+  outline-offset: 1px;
   outline: 1px solid #FFF;
-  padding: 1px 2px;
-}
-
-.search-form__label:active {
-  border: 1px solid #fff;
-  outline: none;
 }
 
 .search-form__textfield:focus {
@@ -233,8 +233,9 @@ fieldset {
   background-color: #fff;
   outline-offset: 1px;
   outline: 1px solid #fff;
-  margin: 0 2px;
-  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-form__checkbox-list .search-form__label:hover {
@@ -256,7 +257,7 @@ fieldset {
 .button:focus-visible {
   outline-offset: 1px;
   outline: 1px solid #fff;
-  border: 1px solid #fff;
+  margin: 2px;
 }
 
 .button:active {
@@ -266,11 +267,6 @@ fieldset {
 
 .content__card-link_current {
   background-color: #545050;
-}
-
-.content__card-link {
-  display: block;
-  margin: 2px;
 }
 
 .content__card-link:hover {

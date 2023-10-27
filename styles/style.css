@@ -53,7 +53,7 @@ ol {
 
 .content {
   display: flex;
-  margin: 133px 30px;
+  margin: 136px 30px;
   justify-content: center;
   align-items: flex-end;
   gap: 30px;
@@ -66,6 +66,7 @@ ol {
 
 .content__list {
   block-size: 300px;
+  inline-size: 400px;
   overflow-y: scroll; 
   display: flex;
   flex-direction: column;

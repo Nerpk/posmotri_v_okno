@@ -75,11 +75,16 @@ ol {
 
 .content__list {
   block-size: 300px;
-  overflow-y: auto; 
+  overflow: auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
   position: relative;
+}
+
+.content__list::-webkit-scrollbar {
+  height: 0;
+  /*из-за переполнения по инлайновой оси внизу появлялся скролл какого-то размера внизу списка поэтому кнопка прыгала вверх*/
 }
 
 .content__details {
@@ -128,6 +133,7 @@ ol {
   line-height: 94%;
   text-transform: uppercase;
   font-family: Oswald, sans-serif;
+  min-inline-size: 398px;
 }
 
 .content__accent {
@@ -174,8 +180,8 @@ fieldset {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   border: none;
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   min-inline-size: 225px;
   appearance: none;
   min-block-size: 27px;
@@ -257,12 +263,15 @@ fieldset {
 .button:focus-visible {
   outline-offset: 1px;
   outline: 1px solid #fff;
-  margin: 2px;
+}
+
+.more-button:focus-visible {
+  margin: 0 2px 2px;
 }
 
 .button:active {
   background-color: #545050;
-  border: 1px solid #fff;
+  outline: 1px solid #fff;
 }
 
 .content__card-link_current {
@@ -280,4 +289,12 @@ fieldset {
 .content__card-link:focus-visible {
   outline-offset: 1px;
   outline: 1px solid #fff;
+}
+
+.content__list li:empty {
+  margin-block-start: -30px; 
+  /*после нажатия на кнопку показать ещё остаётся пустой элемент списка с высотой ноль поэтому гэп применяется два раза
+  не думаю что это самое правильное решение, но для всех пустых ли из списка под заголовком отрицательный марджин съест лишний гэп
+  более правильным было бы наверное написать на js поведение кнопки так чтобы она не оставляла за собой пустой элемент списка
+  (последня строчка просто рассуждение с мыслями как заменить в будущем при получении новых навыков)*/
 }
